@@ -1,0 +1,84 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>主页</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <!-- Bootstrap 核心CSS文件 -->
+    <link href="{% static 'nover/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <!--<link href="justified-nav.css" rel="stylesheet">-->
+    <style type="text/css">
+      body{
+		  background: url("http://bpic.588ku.com/back_pic/03/76/31/1557be98244b2bd.jpg!r850/fw/800");
+		  background-size: 100%;
+		  background-color: white;
+		  color: #337ab7;
+		  margin: 220px;
+          font-family:"华文行楷";
+		  font-size: 25px;
+        }
+        /*.form-signin{background: rgba(255,255,255,0);width:320px;margin:120px auto;}*/
+        /*阴影*/
+        .fa{display: inline-block;top: 27px;left: 6px;position: relative;color: #ccc;}
+        input[type="text"],input[type="password"]{padding-left:26px;}
+        #checkbox{padding-left:21px;}
+
+        .form-signin-heading{
+            text-align: center;
+            color: #337ab7;
+        }
+        .tabbable{
+            background: rgba(255,255,255,0.7);
+        }
+        .one{
+            width: 100%;
+            height: 450px;
+            line-height: 450px;
+        }
+        .footer{
+
+            position: fixed;
+            left: 460px;
+            bottom: 6px;
+            background: rgba(255,255,255,0.7);
+        }
+        .footer .foot{
+            margin: 0 auto;
+        }
+		.tabbable {
+            background: rgba(255,255,255,0.9);
+        }
+  </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+			{%for i in book%}
+            <div class="col-md-4 tabbable" id="tabs-142121">
+					 <a href = "{%url 'nover:q_chapter' i.0%}"><p>
+					 书名：{{i.1|safe}}<br>
+					 作者：{{i.3}}<br>
+					 </p></a>
+					 <hr />
+            </div>
+			{%endfor%}
+        </div>
+        <footer class="footer">
+        <p class="foot">&copy; &copy; 智能爬，免费小说</p>
+        </footer>
+    </div>
+<script type="text/javascript" src="{% static 'nover/js/jquery-3.3.1.min.js' %}"></script>
+<!-- Bootstrap部分： -->
+<script type="text/javascript" src="{% static 'nover/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

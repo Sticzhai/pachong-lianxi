@@ -23,11 +23,11 @@ urlpatterns = [
     path('search/',views.search,name='search'),
     path('search/<int:book_pk>/<int:book_id>/',views.book,name = 'book'),
     path('search/<int:book_pk>/<int:book_id>/<int:a>/',views.book,name = 'book_save'),
-    path('search/<int:book_pk>/<int:book_id>/<int:chapter_id>.html/',
-         views.chapter,
+    path('search/<int:book_pk>/<int:book_id>/<int:chapter_id>.html/',views.chapter,
          name = 'chapter'),
-
-    
+    path('q_search/',views.q_search,name = 'q_search'),
+    path('q_chapter/<book_id>', views.q_chapter, name='q_chapter'),
+    path('q_content/<book_id>/<chapter_id>', views.q_content, name='q_content'),
 ]
 
 

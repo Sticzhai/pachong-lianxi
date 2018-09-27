@@ -66,17 +66,32 @@
 
             <div class="col-md-2">
             </div>
-            <div class="col-md-8 tabbable" id="tabs-142121">
+            <div class="col-md-8" id="tabs-142121">
+                <div class="tabbable" id="tabs-142713">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#panel-71949" data-toggle="tab" contenteditable="false" class="glyphicon glyphicon-education">智能搜1</a>
+                        </li>
+                        <li class="">
+                            <a href="#panel-486460" data-toggle="tab" contenteditable="false" class="glyphicon glyphicon-education">智能搜2</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="panel-71949">
+                             <form action="{%url 'nover:search'%}" method="get">
+                            {% csrf_token %}
+                            <h3>输入要搜索的书名1：<input type="text" name="key_word" placeholder="输入关键字">
+                                <input type="submit" value="开始搜索"></h3>
 
-                 <div class="masthead">
-                     <form action="{%url 'nover:search'%}" method="get">
-                    {% csrf_token %}
-                    <h3>输入要搜索的书名：<input type="text" name="key_word" placeholder="输入关键字">
-                        <input type="submit" value="开始搜索"></h3>
-
-                    </form>
-
-                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="panel-486460">
+                             <form action="{%url 'nover:q_search'%}" method="get">
+                            {% csrf_token %}
+                            <h3>输入要搜索的书名2：<input type="text" name="book_key" placeholder="输入关键字">
+                                <input type="submit" value="开始搜索"></h3>
+                            </form>
+                        </div>
             </div>
             <div class="col-md-2">
             </div>
@@ -85,8 +100,8 @@
         <p class="foot">&copy; 智能爬，免费小说</p>
         </footer>
     </div>
-<script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'nover/js/jquery-3.3.1.min.js' %}"></script>
 <!-- Bootstrap部分： -->
-<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'nover/js/bootstrap.min.js' %}"></script>
 </body>
 </html>

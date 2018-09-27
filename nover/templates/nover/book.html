@@ -21,6 +21,7 @@
           background: url("http://bpic.588ku.com/back_pic/03/76/31/1557be98244b2bd.jpg!r850/fw/800");
           background-size: 100%;
           background-color: white;
+          margin: 120px;
           color: #337ab7;
           font-family:"华文行楷";
           font-size: 25px;
@@ -53,6 +54,9 @@
         .tabbable {
             background: rgba(255,255,255,0.9);
         }
+        .im{
+            height: 70px;
+        }
   </style>
 
 </head>
@@ -71,8 +75,9 @@
 		</div>
         <div class="row">
 			{%for i in book_info%}
-            <div class="col-md-6 tabbable" id="tabs-142121">
-					<a href ='{{i.0}}'>{{i.1}}</a><br>
+            <div class="col-md-6 tabbable im" id="tabs-142121">
+                <a href ='{{i.0}}'>{{i.1}}</a><br>
+                <hr />
             </div>
 			{%endfor%}
         </div>

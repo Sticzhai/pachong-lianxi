@@ -13,7 +13,6 @@ class Spider:
                  url='https://www.x23us.com/html/70/70640/',
                  charset='gbk',
                  json = None,
-
                  ):
 
         self.url = url
@@ -37,7 +36,7 @@ class Spider:
         '''
         info_dict = {}
         for key,value in regex.items():
-            info_dict[key]=re.findall(value,self.html)
+            info_dict[key]=re.findall(value,self.html,re.S)
         return info_dict
 
     def content(self,kongge = '&nbsp;',br ='<br />',
@@ -73,13 +72,13 @@ class XiaoShuo(threading.Thread):
         else:
             with open(r'nover/save-content/jishu.json','w') as f:
                 f.write(json.dumps('0'))
-                print('0')
+                #print('0')
     def run(self):
         for xx in range(10): #len(self.info_list['book_info'])):
             if glob.glob(r'nover/save-content/jishu.json'):
                 with open(r'nover/save-content/jishu.json') as ff:
                     site = int(json.load(ff))
-                if site == 20 : #len(self.info_list['book_info']):
+                if site == len(self.info_list['book_info']):
                     print('本小说下载完毕！')
                     with open('nover/save-content/jishu.json','w') as f:
                         f.write(json.dumps('0'))

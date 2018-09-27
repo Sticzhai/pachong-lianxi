@@ -58,7 +58,7 @@
             float: left;
         }
         .im{
-            height: 430px;
+            height: 325px;
         }
 
   </style>
@@ -68,12 +68,12 @@
     <div class="container">
         <div class="row">
             {%for a,b in content.items%}
-            <div class="col-md-6 tabbable" id="tabs-142121">
+            <div class="col-md-3 tabbable" id="tabs-142121">
                 <div class = 'im'>
                     {%if b.1%}
-                        <img src="{{b.1}}" alt="" width="300" height="300">
+                        <img src="{{b.1}}" alt="" width="180" height="180">
                     {%else%}
-                        <img src="http://bpic.588ku.com/back_pic/04/04/72/27580b0bce72d87.jpg!r650/fw/800" alt="" width="300" height="300">
+                        <img src="http://bpic.588ku.com/back_pic/04/04/72/27580b0bce72d87.jpg!r650/fw/800" alt="" width="180" height="180">
                     {%endif%}
                     <a href="{%url 'xmly:album' a%}"><h2>{{b.0}}</h2></a>
                     <a href="{%url 'xmly:zhubo' b.3%}"><h4>{{b.2}}</h4></a>

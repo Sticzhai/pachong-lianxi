@@ -71,11 +71,10 @@
                  <div class="masthead">
                      <form action="{%url 'search:load'%}" method="get">
                     {% csrf_token %}
-                    <h3>输入要下载的链接：<input type="text" name="content_url" placeholder="输入链接">
-                        <input type="submit" value="开始下载" onclick="downLoad()"></h3>
-
+                         <h3>输入要下载的链接：<input type="text" name="content_url" placeholder="输入链接"><br>
+                             <h3>为它取名（包含扩展名）：<input type="text" name="name_g" placeholder="如：音乐.mp3">
+                                 <input type="submit" value="开始下载" onclick="downLoad()"></h3>
                     </form>
-
                 </div>
             </div>
             <div class="col-md-2">

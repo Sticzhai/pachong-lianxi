@@ -23,12 +23,11 @@ m4a:['data']['tracksAudioPlay'][arg]['src']
 m4a名字：name = ['data']['tracksAudioPlay'][arg]['trackName'].replace('|',',')
 #主播url:'https://www.ximalaya.com/revision/user/?uid={16809064}'.format(zhubo_id)
 '''
-import re,requests
-import threading
+import requests
 
 class Xmly:
     headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0'}
-    def __init__(self,search_name,
+    def __init__(self,search_name = None,
                  url='https://www.ximalaya.com',
                  encode = 'utf-8',
                  ):
@@ -39,7 +38,7 @@ class Xmly:
         self.result = self.search_result()
         self.num = self.ypage()
     def search_result(self,page = 1):
-        search_url = 'https://www.ximalaya.com/revision/search?core=album&kw={}&page={}&spellchecker=true&rows = 20'.format(self.search_name,page)
+        search_url = 'https://www.ximalaya.com/revision/search?core=album&kw={}&page={}&spellchecker=true&rows = 40'.format(self.search_name,page)
         print(search_url)
         result = self.s.get(search_url,headers = self.headers).json()
         result = result['data']['result']['response']
@@ -68,13 +67,13 @@ class Xmly:
         '''
         content = {}
         ypage = self.num['ypage']
-        for x in range(int(ypage)):
+        for x in range(2):         #int(ypage)):     只显示喜马拉雅搜索结果前两页，10个/页
             result = self.search_result(x+1)
             #print(result)
             resutlt_list = result['docs']
-            #print(result['docs'])
+            print(result['docs'])
             for i in resutlt_list:
-                #print(i)
+                print(i)
                 name = i['title']
                 name_url = i['url'].split('/')[2]
                 try :

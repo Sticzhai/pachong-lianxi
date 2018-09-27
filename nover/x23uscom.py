@@ -8,11 +8,8 @@ class X23usCom:
     搜索关键字，返回关键字列表。
     '''
     def __init__ (self,key_word='大主宰'):
-
         self.key_word = key_word
-        
 
-    
     def index(self):
         key_word = self.key_word.encode('gb2312')
         #key_word = urllib.parse.quote(key_word)
@@ -22,6 +19,7 @@ class X23usCom:
             'searchkey':key_word,
             }
         res = requests.get(url,params=params)
+        print(res.url)
         if res.history:
             return {'url':res.url}
         else:
@@ -43,15 +41,17 @@ class X23usCom:
         book_statu = re.findall(book_statu,self.html)
         #print(len(book_statu))
 
-        #{'大主宰'：{author:土豆，url:},...}
+        #{'大主宰'
+        # ：{author:土豆，url:},...}
 
         info_dict = {}
         for i in range(len(book_statu)):
-            info_dict[book_name[i].replace('<b style="color:red">','').replace('</b>','')] = {'author':book_author[i],
-                                       'url':book_url[i],
-                                       'statu':book_statu[i],
+            info_dict[book_name[i].replace('<b style="color:red">','').replace('</b>','')] = \
+                {'author':book_author[i],
+                 'url':book_url[i],
+                 'statu':book_statu[i],
                                        }
-
+        print(info_dict)
         return info_dict
     
     

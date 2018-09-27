@@ -53,6 +53,9 @@
         .tabbable {
             background: rgba(255,255,255,0.9);
         }
+        body {
+            margin: 80px;
+        }
   </style>
 
 </head>
@@ -66,25 +69,32 @@
                 <a href = '/nover/search/{{previou_page.0.0}}'>上一页</a>
             </div>
             <div class="col-md-4 tabbable" id="tabs-142121">
-                <a href = '/nover/search/{{previou_page.0.0}}'><a href = '/nover/search/{{previou_page.0.1}}'>回到章节目录</a></a>
+                <a href = '/nover/search/{{previou_page.0.1}}'>回到章节目录</a>
             </div>
             <div class="col-md-4 tabbable" id="tabs-142121">
-                <a href = '/nover/search/{{previou_page.0.0}}'><a href = '/nover/search/{{previou_page.0.2}}'>下一页</a></a>
+                <a href = '/nover/search/{{previou_page.0.2}}'>下一页</a>
             </div>
         </div>
         <div class="row">
-            <div class="c
-            ol-md-12 tabbable" id="tabs-142121">
+            <div class="col-md-12 tabbable" id="tabs-142121">
                  <div class="masthead">
                      <br/>
                     {{chapter_content.0|safe}}
+                     <hr>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-4 tabbable" id="tabs-142121">
+                <a href = '/nover/search/{{previou_page.0.0}}'>上一页</a>
+            </div>
+            <div class="col-md-4 tabbable" id="tabs-142121">
+                <a href = '/nover/search/{{previou_page.0.1}}'>回到章节目录</a>
+            </div>
+            <div class="col-md-4 tabbable" id="tabs-142121">
+                <a href = '/nover/search/{{previou_page.0.2}}'>下一页</a>
             </div>
         </div>
         <footer class="footer">
-        <p class="foot">&copy; &copy; 智能爬，免费小说</p>
+        <p class="foot">&copy; 智能爬，免费小说</p>
         </footer>
     </div>
 <script type="text/javascript" src="{% static 'nover/js/jquery-3.3.1.min.js' %}"></script>
